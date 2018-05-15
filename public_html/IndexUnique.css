@@ -1,0 +1,32 @@
+#Ad			{
+				width: 100%
+			}
+#Description{
+			
+				column-count: 2;
+				column-gap: 100px;
+				column-rule-style: solid;
+				column-width: 2px;
+				column-fill: balance;
+			}
+#Descript	{
+				margin-left: 15px;
+				height:35%;
+				
+			}
+#Models		{
+				height: 35%;
+				width: 75%;
+				
+				right: 0 px;
+				padding: 20 px;
+				margin: 20px; 
+				margin-left: 35px;		
+			}
+#Slogan		{
+				text-align: center;
+			}
+#Shipping	{
+				text-align: center;
+			}
+

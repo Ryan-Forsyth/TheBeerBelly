@@ -1,0 +1,43 @@
+<?php
+require('authenticate.inc');
+include('header.inc');
+?>
+You are logged in.
+<table class='admin'>
+ <tr>
+ <th>Name</th>
+ <th>Price</th>
+ <th>Description</th>
+ <th>&nbsp;</td>
+ <th>&nbsp;</td>
+ </tr>
+<?php
+$result = $db->query('select * from products');
+while($row = $result->fetch_object()) {
+print "<tr>
+ <form action='updateproduct.html' method='post'>
+ <input type='hidden' name='id' value='".$row->ID."'>
+ <td><input type='text' name='name' value='".addslashes($row->Name)."'></td>
+ <td><input type='text' name='price' value='".addslashes($row->Price)."'></td>
+ <td><input type='text' name='desc' value='".addslashes($row->Description)."'></td>
+ <td><button type='submit'>Update</button></td>
+ </form>
+ <form action='deleteproduct.html' method='post'>
+ <input type='hidden' name='id' value='".$row->ID."'>
+ <td><button type='submit'>Delete</button></td>
+ </form>
+</tr>";
+}
+?>
+<tr>
+ <form action='newproduct.html' method='post'>
+ <td><input type='text' name='name'></td>
+ <td><input type='text' name='price'></td>
+ <td><input type='text' name='desc'></td>
+ <td><button type='submit'>Create</button></td>
+ </form>
+ <td>&nbsp;</td>
+</tr>
+</table>
+<a href='admin.html?logoff=1'>Logoff</a>
+<?php include('footer.inc'); ?>

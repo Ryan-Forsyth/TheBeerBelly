@@ -1,0 +1,10 @@
+<?php
+require('authenticate.inc');
+require_once('db.inc');
+$stmt = $db->prepare('insert into products(Name, Price, Description) values
+(?, ?, ?)');
+$stmt->bind_param('sds', $_POST['name'], $_POST['price'], $_POST['desc']);
+$stmt->execute();
+require_once('redirect.inc');
+redirect('admin.html');
+?>

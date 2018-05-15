@@ -1,0 +1,20 @@
+<?php
+//connect to database
+include("cart.inc");
+$cart = load_cart();
+
+//prepare the statement, bind the data, and then execute
+require_once("db.inc");
+$sql = "INSERT INTO orders (firstname, lastname,Phone, Email, street, city, state, zip,Cart)
+			VALUES (?,?,?,?,?,?,?,?,?)";
+$stmt =  mysqli_prepare($db, $sql);
+$temp=serialize($cart);
+$stmt->bind_param("ssissssis",$_POST['Firstname'], $_POST['Lastname'], $_POST['Street'], 
+$_POST['Phone'], $_POST['Email'],$_POST['City'], $_POST['State'], $_POST['Zip'], $temp);
+$stmt->execute();
+
+//header,content, footer
+include("header.inc");
+print "Thank you";
+include ("footer.inc");
+?>

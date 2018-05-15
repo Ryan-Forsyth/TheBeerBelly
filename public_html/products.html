@@ -1,0 +1,44 @@
+
+<!--
+Name: Ryan Forsyth
+Email: Rforsyth@email.uscupstate.edu
+Purpose:    To build a website for the company The BeerBelly
+            This page displays and describes the company's products.
+Date: 01/31/2018
+Class: CSCI 450
+-->
+
+<?php include('header.inc'); ?>
+		
+		<br/>
+		<h1 id="Shipping">Always FREE Ground Shipping for US postal addresses! </h1>
+		<ul id="Products">
+		<?php require_once('db.inc');
+		$result=$db->query("select * from products");
+		
+		while($row=$result->fetch_object())
+		{
+			print "<div class='product'>";
+			print "<form action='cart.html' method='post'>";
+			print "<input type='hidden' name='id' value='".$row->ID."'>";
+			print "<li>";
+			print "\t<ul class=productlayout>\n\t\t<li>	<h2>".$row->Name."</h4></li>";
+			print "\t<li class='ProductImage'>"."Insert Image Here"."</li>";
+			print "\t\t<li><p>$".$row->Price."</p></li>";
+			$Desc=$row->Description;
+			if(strlen($row->Description)> 250){
+				$Desc=substr($row->Description,0,250)."...";	
+			}
+			if(strlen($row->Description)< 250){
+				
+				$Desc=str_pad($Desc,(250-strlen($Desc)),"  ");
+			}
+			print "\t\t<li class='Desc'><p>".$Desc."</p></li>\n</li>";
+			print '<li><button type="submit" class="OrderButton"> Add To Cart </button></li>';
+			print "</form>";
+			print "</div>";			
+		}
+		
+		 ?>
+		</ul>
+  <?php include('footer.inc'); ?>

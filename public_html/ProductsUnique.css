@@ -1,0 +1,17 @@
+#foot	{
+			    position: absolute;
+    			top: 170%;
+    			height: 3em;
+ 				width: 100%;
+ 			 background-color: #b76100;
+		}
+@media only screen and (min-width:40em) {
+	#foot	{
+			    position: absolute;
+    			left: 0;
+    			top: 135%;
+  				height: 50px;
+ 				width: 100%;
+ 			 background-color: #b76100;
+		}
+}

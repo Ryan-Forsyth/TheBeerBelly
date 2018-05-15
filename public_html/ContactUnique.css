@@ -1,0 +1,23 @@
+
+
+#SocialMedia{
+				list-style-type:none;
+			}
+#SocialMedia li{
+					float: left;
+					padding: 20px;
+				}
+
+#Instagramlogo{
+					width: 10 %;
+					height: 10%;
+				}
+#Facebooklogo{
+					width 10%;
+					height: 10%;
+			}
+body	{
+			
+			margin: 0 0 40%; /* bottom = footer height */
+
+		}

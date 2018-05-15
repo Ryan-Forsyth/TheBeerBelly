@@ -1,0 +1,53 @@
+
+<!--
+Name: Ryan Forsyth
+Email: Rforsyth@email.uscupstate.edu
+Purpose: 	To build a website for the company The BeerBelly
+			This page acts as the homepage or landing page for the website.
+Date: 01/31/2018
+Class: CSCI 450
+-->
+<?php include('header.inc'); ?>
+		<h4 id="OrderTitle">Place Order</h4>
+		
+ 			<form onsubmit='return ordervalidate()'  action='thankyou.html'  method='post'>
+ 			<div id="ordertable">
+ 				<div class='entryfield'> 
+ 				<ul>
+ 					<li>FirstName:<input type='text' name='Firstname' class='name' id="Firstname" ></li>
+ 				
+ 					<li> Lastname:<input type='text' name='Lastname' class='name' id='Lastname'></li>
+ 				</ul> 
+ 				</div>
+ 				<div class='entryfield'> 
+ 				<ul>
+ 					<li>Street Address:<input type='text' name='Street' class='name'  id='Street'></li>
+ 				
+ 					<li>City:
+					 <input type='text' name='City' class='name'  id='City'></li>
+ 				
+ 					<li>State:<input type='select' name='State' id='State' >
+					 
+					 </li>
+ 				
+ 	
+ 					<li>Zip:<input type='text' name='Zip' id='Zip' ></li>
+ 				</ul>
+ 				</div>
+ 				<div class='entryfield'>
+ 				<ul>
+ 				
+ 					<li>Email:<input type='email' name='Email' class='name' id='Email'></li>
+ 				
+ 				
+ 					<li>Phone Number:<input type='tel' name='Phone' id='phone'></li>
+ 				</ul>
+ 				</div>
+
+ 				<button type='submit' id="Submit">Place Order</button>
+				
+				</div>
+ 			</form>
+		
+<?php include('footer.inc'); ?>
+

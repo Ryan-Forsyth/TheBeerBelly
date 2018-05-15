@@ -1,0 +1,22 @@
+<?php
+include("header.inc");
+include('cart.inc');
+$cart=load_cart();
+if(!empty($_POST['id']))
+{
+	if(isset($_POST['qty']))
+		$cart[$_POST['id']]=$_POST['qty'];
+	else
+		$cart[$_POST['id']]=$cart[$_POST['id']]+1;
+	
+	if(!$cart[$_POST['id']])
+		unset($cart[$_POST['id']]);
+	
+}
+print "<div id=CartTable>";
+show_cart($cart);
+print"<a href='order.html'> <button> Check out</button></a>";
+print"</div>";
+
+include("footer.inc");
+?>
